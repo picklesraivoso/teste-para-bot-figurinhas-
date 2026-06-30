@@ -7,7 +7,6 @@ const client = new Client({
 
 client.on('qr', (qr) => {
     console.log('QR CODE RECEBIDO! Escaneie para conectar:');
-    // O servidor vai usar isso para gerar o QR Code depois
 });
 
 client.on('ready', () => {
@@ -29,13 +28,20 @@ client.on('message', async (msg) => {
                 media.mimetype = 'image/webp';
                 media.filename = 'sticker.webp';
                 
-                await client.sendMessage(msg.from, media, { sendMediaAsSticker: true });
+                // Busca as informações de quem enviou a mensagem
+                const contact = await msg.getContact();
+                const nomeDoUsuario = contact.pushname || 'Amigo';
+                
+                await client.sendMessage(msg.from, media, { 
+                    sendMediaAsSticker: true,
+                    stickerName: 'NAKKA-BOT💲', // Nome que você quer dar ao seu Bot
+                    stickerAuthor: nomeDoUsuario     // Nome de quem enviou a foto
+                });
             } catch (error) {
-                console.error('Erro ao criar sticker:', error);
+                console.error('Ih, travei aqui! Tente novamente.:', error);
             }
         }
     }
 });
 
 client.initialize();
-
