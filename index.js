@@ -63,15 +63,15 @@ client.on('message', async (msg) => {
 
     // 📋 COMANDO 1: Menu Principal
     if (msg.body.toLowerCase() === '!menu') {
-        const textoMenu = `🤖 *Bem-vindo ao NAKKA-BOT!* 💲\n\n` +
+        const textoMenu = `⚜️ *Bem-vindo ao NAKKA-BOT!* ⚜️ \n\n` +
                           `Aqui estão os comandos disponíveis para você:\n\n` +
-                          `📸 *Como fazer uma figurinha:*\n` +
+                          `🔹 *Como fazer uma figurinha:*\n` +
                           `1. Envie uma foto no chat.\n` +
                           `2. Digite */f* na legenda da foto (ou responda a foto com */f*).\n\n` +
-                          `✏️ *Como personalizar o nome da figurinha:*\n` +
+                          `🔹 *Como personalizar o nome da figurinha:*\n` +
                           `Use o comando abaixo *antes* de enviar a foto:\n` +
-                          `👉 \`/rename: Nome da Figurinha - Nome do Autor\`\n\n` +
-                          `💡 _Exemplo:_ \`/rename: Meme do Ano - Nakka\``;
+                          `🔹 \`/rename: Nome da Figurinha - Nome do Autor\`\n\n` +
+                          `💡 _Exemplo:_ \`/rename: maria - Nakka\``;
         
         await client.sendMessage(chat_id, textoMenu);
         return;
