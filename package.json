@@ -1,0 +1,13 @@
+{
+  "name": "bot-figurinhas",
+  "version": "1.0.0",
+  "description": "Meu primeiro bot de stickers para WhatsApp",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "whatsapp-web.js": "^1.23.0",
+    "sharp": "^0.33.2"
+  }
+}
